@@ -2,131 +2,124 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>تأكيد الشراء - فـــღـــاࢪسے ســ✯ــتــوࢪ</title>
+  <title>تأكيد الشراء</title>
   <style>
+    @keyframes shine {
+      0% {
+        text-shadow:
+          0 0 8px #d4af37,
+          0 0 20px #ffd700,
+          0 0 30px #ffea00,
+          0 0 40px #ffd700,
+          0 0 50px #ffea00,
+          0 0 60px #d4af37;
+      }
+      50% {
+        text-shadow:
+          0 0 12px #ffd700,
+          0 0 25px #fff700,
+          0 0 35px #fff700,
+          0 0 45px #ffd700,
+          0 0 55px #fff700,
+          0 0 65px #ffd700;
+      }
+      100% {
+        text-shadow:
+          0 0 8px #d4af37,
+          0 0 20px #ffd700,
+          0 0 30px #ffea00,
+          0 0 40px #ffd700,
+          0 0 50px #ffea00,
+          0 0 60px #d4af37;
+      }
+    }
+
     body {
       margin: 0;
       height: 100vh;
       background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      direction: rtl;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .info-box {
-      background: #111;
-      border: 4px solid #d4af37;
-      border-radius: 25px;
-      padding: 60px 70px;
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 0 30px #d4af37;
-      font-size: 1.7rem;
-      line-height: 2.4rem;
-      font-weight: bold;
-      user-select: none;
-    }
-
-    h1 {
+      font-family: Arial, sans-serif;
       color: #d4af37;
-      font-size: 3.5rem;
-      margin-bottom: 50px;
-      text-shadow: 0 0 15px #d4af37;
+      direction: rtl;
+      text-align: center;
+    }
+
+    .confirm-box {
+      background: linear-gradient(135deg, #222 0%, #111 100%);
+      border-radius: 20px;
+      border: 4px solid #d4af37;
+      box-shadow: 0 0 30px #d4af37;
+      padding: 40px 60px;
+      max-width: 420px;
+      width: 90vw;
+      animation: shine 4s infinite alternate;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      animation: shine 3s infinite alternate;
     }
 
     p {
-      margin: 20px 0;
-      color: #d4af37;
+      font-size: 22px;
+      margin: 15px 0;
+      font-weight: 600;
     }
 
     .wallet-number {
-      font-size: 3rem;
-      color: #000;
-      background: #d4af37;
-      padding: 20px 40px;
-      border-radius: 20px;
-      margin-top: 15px;
-      user-select: all;
-      box-shadow: 0 0 20px #fff;
+      font-size: 28px;
+      font-weight: 900;
+      text-shadow: 0 0 15px #ffd700;
+      margin: 20px 0;
     }
 
-    .btn-back {
-      display: inline-block;
-      margin-top: 60px;
-      padding: 18px 50px;
-      border: 4px solid #d4af37;
-      border-radius: 30px;
-      color: #d4af37;
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 20px;
       font-weight: bold;
-      font-size: 1.8rem;
-      text-decoration: none;
-      transition: background 0.3s ease, color 0.3s ease;
-      box-shadow: 0 0 15px #d4af37;
-      user-select: none;
-    }
-
-    .btn-back:hover {
-      background: #d4af37;
       color: #000;
-      box-shadow: 0 0 30px #fff;
+      background: #d4af37;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #d4af37;
+      transition: background 0.3s ease;
     }
 
-    /* الهواتف */
-    @media (max-width: 480px) {
-      .info-box {
-        padding: 40px 30px;
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        max-width: 90vw;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 35px;
-      }
-
-      .wallet-number {
-        font-size: 2.4rem;
-        padding: 15px 30px;
-      }
-
-      .btn-back {
-        padding: 15px 35px;
-        font-size: 1.4rem;
-        margin-top: 40px;
-      }
+    button:hover {
+      background: #ffd700;
     }
   </style>
 </head>
 <body>
 
-  <div class="info-box">
-    <h1>تأكيد شراء رقم فيك</h1>
-
+  <div class="confirm-box">
+    <h2>تأكيد عملية الشراء</h2>
     <p>الدولة: <span id="country"></span></p>
     <p>السعر: <span id="price"></span></p>
-    <p>كود الدولة: <span id="code"></span></p>
-    <p>رقم المحفظة لتحويل المبلغ:</p>
+    <p>رمز الدولة: <span id="code"></span></p>
+    <p>رقم المحفظة:</p>
     <p class="wallet-number">01061889183</p>
-
-    <a href="index.html" class="btn-back">العودة للمتجر</a>
+    <button onclick="alert('تم تأكيد الشراء! شكراً لك');">تأكيد الشراء</button>
   </div>
 
   <script>
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param) || '';
-    }
+    // جلب القيم من رابط الصفحة
+    const params = new URLSearchParams(window.location.search);
+    const country = params.get('country') || 'غير محدد';
+    const price = params.get('price') || 'غير محدد';
+    const code = params.get('code') || 'غير محدد';
 
-    document.getElementById('country').textContent = getQueryParam('country');
-    document.getElementById('price').textContent = getQueryParam('price');
-    document.getElementById('code').textContent = getQueryParam('code');
+    document.getElementById('country').textContent = country;
+    document.getElementById('price').textContent = price;
+    document.getElementById('code').textContent = code;
   </script>
 
 </body>

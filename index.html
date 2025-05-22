@@ -11,13 +11,45 @@
       margin: 20px;
       direction: rtl;
     }
+
+    @keyframes shine {
+      0% {
+        text-shadow:
+          0 0 8px #d4af37,
+          0 0 20px #ffd700,
+          0 0 30px #ffea00,
+          0 0 40px #ffd700,
+          0 0 50px #ffea00,
+          0 0 60px #d4af37;
+      }
+      50% {
+        text-shadow:
+          0 0 12px #ffd700,
+          0 0 25px #fff700,
+          0 0 35px #fff700,
+          0 0 45px #ffd700,
+          0 0 55px #fff700,
+          0 0 65px #ffd700;
+      }
+      100% {
+        text-shadow:
+          0 0 8px #d4af37,
+          0 0 20px #ffd700,
+          0 0 30px #ffea00,
+          0 0 40px #ffd700,
+          0 0 50px #ffea00,
+          0 0 60px #d4af37;
+      }
+    }
+
     h1 {
       text-align: center;
       font-weight: bold;
       margin-bottom: 30px;
       color: #d4af37;
-      text-shadow: 0 0 5px #d4af37;
+      animation: shine 3s infinite alternate;
     }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -26,6 +58,7 @@
       gap: 25px 30px;
       justify-items: center;
     }
+
     .card {
       background: #111;
       border: 2px solid #d4af37;
@@ -40,13 +73,17 @@
       cursor: pointer;
       color: #d4af37;
       font-weight: bold;
+      animation: shine 4s infinite alternate;
     }
+
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px #fff;
       color: #fff;
       border-color: #fff;
+      animation-play-state: paused;
     }
+
     .card img {
       width: 90px;
       height: 60px;
@@ -56,10 +93,12 @@
       border: 2px solid #d4af37;
       box-shadow: 0 0 5px #d4af37;
     }
+
     .card p {
       margin: 6px 0;
       font-size: 18px;
     }
+
     .buy {
       display: inline-block;
       margin-top: 12px;
@@ -71,10 +110,12 @@
       text-decoration: none;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     .buy:hover {
       background: #d4af37;
       color: #000;
     }
+
     @media (max-width: 600px) {
       .container {
         grid-template-columns: 1fr;
@@ -175,15 +216,8 @@
     <a href="buy.html?country=هولندا&price=25ج&code=+31" class="buy">شراء الآن</a>
   </div>
 
-  <!-- دولة لاتيفي الجديدة -->
   <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg" alt="لاتيفي" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Latvia.svg" alt="لاتيفيا" />
     <p>لاتيفي - 30ج</p>
     <p>رقم فيك لاتيفي (+371)</p>
-    <a href="buy.html?country=لاتيفي&price=30ج&code=+371" class="buy">شراء الآن</a>
-  </div>
-
-</div>
-
-</body>
-</html>
+    <a href="buy.html?
