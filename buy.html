@@ -1,71 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>تأكيد الشراء</title>
+  <title>تأكيد الشراء - فـــღـــاࢪسے ســ✯ــتــوࢪ</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 30px;
+      margin: 30px;
+      direction: rtl;
       text-align: center;
     }
     h1 {
       color: #d4af37;
-      margin-bottom: 20px;
       text-shadow: 0 0 5px #d4af37;
+      margin-bottom: 30px;
     }
-    .info {
+    .info-box {
+      background: #111;
+      border: 2px solid #d4af37;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 450px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px #d4af37;
+    }
+    p {
       font-size: 20px;
       margin: 15px 0;
-    }
-    .wallet {
-      background: #111;
-      border: 2px dashed #d4af37;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px auto;
-      width: fit-content;
       font-weight: bold;
+      color: #d4af37;
     }
-    .confirm {
+    .wallet-number {
+      font-size: 24px;
+      color: #fff;
+      background: #d4af37;
+      padding: 10px 15px;
+      border-radius: 10px;
+      user-select: all;
+    }
+    .btn-back {
+      display: inline-block;
       margin-top: 30px;
-      padding: 10px 25px;
-      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #d4af37;
+      border-radius: 15px;
+      color: #d4af37;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .btn-back:hover {
       background: #d4af37;
       color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .confirm:hover {
-      background: #fff;
     }
   </style>
 </head>
 <body>
 
-<h1>تأكيد عملية الشراء</h1>
+<h1>تأكيد شراء رقم فيك</h1>
 
-<div class="info" id="country"></div>
-<div class="info" id="price"></div>
-<div class="info" id="code"></div>
-
-<div class="wallet">
-  رقم المحفظة:<br> 01061889183
+<div class="info-box">
+  <p>الدولة: <span id="country"></span></p>
+  <p>السعر: <span id="price"></span></p>
+  <p>كود الدولة: <span id="code"></span></p>
+  <p>رقم المحفظة لتحويل المبلغ:</p>
+  <p class="wallet-number">01061889183</p>
 </div>
 
-<button class="confirm" onclick="window.location.href='https://wa.me/201061424502'">
-  تأكيد وإرسال إلى الواتساب
-</button>
+<a href="index.html" class="btn-back">العودة للمتجر</a>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  document.getElementById("country").textContent = "الدولة: " + params.get("country");
-  document.getElementById("price").textContent = "السعر: " + params.get("price");
-  document.getElementById("code").textContent = "كود الدولة: " + params.get("code");
+  // دالة لقراءة باراميترز الرابط
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || '';
+  }
+
+  // تعيين القيم في الصفحة
+  document.getElementById('country').textContent = getQueryParam('country');
+  document.getElementById('price').textContent = getQueryParam('price');
+  document.getElementById('code').textContent = getQueryParam('code');
 </script>
 
 </body>
