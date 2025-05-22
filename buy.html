@@ -72,13 +72,11 @@
 <a href="index.html" class="btn-back">العودة للمتجر</a>
 
 <script>
-  // دالة لقراءة باراميترز الرابط
   function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param) || '';
   }
 
-  // تعيين القيم في الصفحة
   document.getElementById('country').textContent = getQueryParam('country');
   document.getElementById('price').textContent = getQueryParam('price');
   document.getElementById('code').textContent = getQueryParam('code');
